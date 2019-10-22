@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10sp"
+        android:background="#8985ff"
+        android:padding="10sp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#8985ff"
+
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jackie Chan Example"
+                android:textSize="25sp"
+                android:layout_marginTop="10sp"
+                android:textStyle="bold"
+                android:id="@+id/guest_name"
+
+                />
+
+
+            <ImageView
+                android:id="@+id/guest_image"
+                android:layout_width="125sp"
+                android:layout_height="142dp"
+                android:background="#04397A"
+                android:scaleType="centerCrop"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:paddingTop="8sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ASL"
+                android:id="@+id/ASL"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="12sp"
+
+
+                />
+
+            <RatingBar
+                android:id="@+id/ratingOfGuest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8sp"
+                android:numStars="5"
+                android:layout_gravity="center"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                />
+
+
+            <TextView
+                android:paddingTop="10sp"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/guest_description_summary"
+                android:textSize="12sp"
+                android:textColor="#000"
+                />
+
+           <Button
+               android:paddingTop="10sp"
+               android:layout_width="150sp"
+               android:layout_height="45sp"
+               android:textSize="12sp"
+               android:text="Hire"
+               android:textStyle="bold"
+               android:layout_gravity="center"
+
+               android:textAlignment="center"
+               android:paddingBottom="10sp"
+               android:background="#A1B7FC"
+               android:textColor="#001968"
+
+               />
+
+
+
+
+
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/cardview"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_width="180sp"
+    android:layout_height="240sp"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5sp"
+    cardview:cardCornerRadius="5sp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:contentDescription="imageofguest"
+        android:id="@+id/guest_image"
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:scaleType="centerCrop"
+        android:background="#FD8E8E"/>
+
+    <TextView
+        android:id="@+id/guest_name"
+        android:textColor="#B90000"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+
