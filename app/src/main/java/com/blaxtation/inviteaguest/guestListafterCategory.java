@@ -49,7 +49,7 @@ public class guestListafterCategory extends AppCompatActivity {
             if (categoryname.equalsIgnoreCase("Actors")) {
 
                 db = FirebaseFirestore.getInstance();
-                final RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+                final RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_guestListafterCategory);
                 mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
                 final CollectionReference guestlist = db.collection("guest");
@@ -92,7 +92,7 @@ public class guestListafterCategory extends AppCompatActivity {
                 if (categoryname.equalsIgnoreCase("Singers")) {
 
                     db = FirebaseFirestore.getInstance();
-                    final RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+                    final RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_guestListafterCategory);
                     mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
                     final CollectionReference guestlist = db.collection("guest");
