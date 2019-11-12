@@ -5,13 +5,26 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_browse_categories"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Browse" />
+            android:title="Browse Categories" />
+
+        <item
+            android:id="@+id/nav_browse_all_talents"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Browse All Talents" />
+
+        <item
+            android:id="@+id/nav_request_status"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="My Bookings" />
+
+
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/menu_gallery" />
+
         <item
             android:id="@+id/nav_faq"
             android:icon="@drawable/ic_menu_gallery"
