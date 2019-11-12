@@ -25,7 +25,7 @@ public class GuestCategory extends AppCompatActivity {
 
         listView=findViewById(R.id.category_ListView);
 
-        final ArrayAdapter<String> mAdapter=new ArrayAdapter<>(GuestCategory.this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.categories));
+        final ArrayAdapter<String> mAdapter=new ArrayAdapter<>(GuestCategory.this,R.layout.text_view_for_list_view,getResources().getStringArray(R.array.categories));
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
