@@ -6,9 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -25,7 +23,10 @@ import com.google.android.material.navigation.NavigationView;
 public class HomeScreenNavDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-   ListView listView;
+
+   Button BrowseCategoriesButton;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,27 +34,17 @@ public class HomeScreenNavDrawer extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        listView=findViewById(R.id.category_ListView);
+        BrowseCategoriesButton = findViewById(R.id.browseCategories);
 
-        final ArrayAdapter<String>mAdapter=new ArrayAdapter<>(HomeScreenNavDrawer.this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.categories));
-
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        BrowseCategoriesButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent=new Intent(HomeScreenNavDrawer.this,guestListafterCategory.class);
-
-
-                //intent.putExtra("category", listView.getItemIdAtPosition(i));
-                String categorry =(adapterView.getItemAtPosition(i).toString());
-              intent.putExtra("category",categorry);
-
+            public void onClick(View view) {
+                Intent intent= new Intent(HomeScreenNavDrawer.this,GuestCategory.class);
                 startActivity(intent);
+
 
             }
         });
-        listView.setAdapter(mAdapter);
-
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -119,7 +110,7 @@ public class HomeScreenNavDrawer extends AppCompatActivity
         if (id == R.id.nav_browse_categories) {
 
         } else if (id == R.id.nav_browse_all_talents) {
-            Intent intent = new Intent(this, gallery.class);
+            Intent intent = new Intent(this, AllTalents.class);
             startActivity(intent);
         }else if (id == R.id.nav_request_status) {
             Intent intent = new Intent(this, RequestStatus.class);

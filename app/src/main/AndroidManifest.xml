@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/main_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RequestStatus"></activity>
+        <activity android:name=".GuestCategory"></activity>
+        <activity android:name=".AllTalents" />
+        <activity android:name=".RequestStatus" />
         <activity android:name=".guestListafterCategory" />
         <activity android:name=".invite" />
         <activity android:name=".contact_us" />

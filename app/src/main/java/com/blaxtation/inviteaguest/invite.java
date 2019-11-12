@@ -1,23 +1,18 @@
 package com.blaxtation.inviteaguest;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
-import android.app.ProgressDialog;
 import android.content.Intent;
-
 import android.os.Bundle;
-
 import android.text.TextUtils;
 import android.view.View;
-
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -29,8 +24,6 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Random;
-import java.util.jar.Attributes;
 
 public class invite extends AppCompatActivity{
 
@@ -90,7 +83,6 @@ public class invite extends AppCompatActivity{
                 final String guestexpectations = guestExpectations.getText().toString();
 
 
-
                 if (!TextUtils.isEmpty(hostname)
                         && !TextUtils.isEmpty(invitedby)
 
@@ -103,41 +95,45 @@ public class invite extends AppCompatActivity{
                         && !TextUtils.isEmpty(eventdetails)
                         && !TextUtils.isEmpty(guestexpectations)) {
 
-                    Map<String,String> inviteRequest = new HashMap<>();
-                    inviteRequest.put("guestName",name);
-                    inviteRequest.put("hostname",hostname);
-                    inviteRequest.put("invitedBy",invitedby);
-                    inviteRequest.put("audienceType",audiencetype);
-                    inviteRequest.put("dateOfEvent",dateofevent);
-                    inviteRequest.put("NnoOfDays",noofdays);
-                    inviteRequest.put("hoursOfEngagement",hoursofeng);
-                    inviteRequest.put("venue",venue);
-                    inviteRequest.put("budget",budget);
-                    inviteRequest.put("eventDetails",eventdetails);
-                    inviteRequest.put("guestExpectations",guestexpectations);
-                    inviteRequest.put("status","Currently in review");
+
+                  /*  if (TextUtils.isEmpty(hostName.getText())) {
+                        hostName.setError("Host Name is Required"); */
+
+                        Map<String, String> inviteRequest = new HashMap<>();
+                        inviteRequest.put("guestName", name);
+                        inviteRequest.put("hostname", hostname);
+                        inviteRequest.put("invitedBy", invitedby);
+                        inviteRequest.put("audienceType", audiencetype);
+                        inviteRequest.put("dateOfEvent", dateofevent);
+                        inviteRequest.put("NnoOfDays", noofdays);
+                        inviteRequest.put("hoursOfEngagement", hoursofeng);
+                        inviteRequest.put("venue", venue);
+                        inviteRequest.put("budget", budget);
+                        inviteRequest.put("eventDetails", eventdetails);
+                        inviteRequest.put("guestExpectations", guestexpectations);
+                        inviteRequest.put("status", "Currently in review");
 
 
-                    firebaseFirestore.collection("InvitationRequest").document().set(inviteRequest).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if(task.isSuccessful()){
+                        firebaseFirestore.collection("InvitationRequest").document().set(inviteRequest).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
 
-                                Toast.makeText(invite.this, "Successfully Submitted. We will contact you shortly.", Toast.LENGTH_LONG).show();
-                                startActivity(new Intent(invite.this,HomeScreenNavDrawer.class));
+                                    Toast.makeText(invite.this, "Successfully Submitted. We will contact you shortly.", Toast.LENGTH_LONG).show();
+                                    startActivity(new Intent(invite.this, HomeScreenNavDrawer.class));
 
+                                } else {
+                                    Toast.makeText(invite.this, "Firestore Error...", Toast.LENGTH_SHORT).show();
+
+                                }
                             }
-                            else{
-                                Toast.makeText(invite.this, "Firestore Error...", Toast.LENGTH_SHORT).show();
+                        });
 
-                            }
-                        }
-                    });
-
-                } else {
-                    Toast.makeText(invite.this, "Please fill all the details", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(invite.this, "Please fill all the details", Toast.LENGTH_SHORT).show();
+                    }
                 }
-            }
+
         });
 
 
@@ -180,8 +176,4 @@ public class invite extends AppCompatActivity{
         });
 
     }
-
-
-
-
 }
