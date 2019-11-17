@@ -2,6 +2,7 @@ package com.blaxtation.inviteaguest;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,10 +31,13 @@ public class gallery extends AppCompatActivity {
     private FirebaseFirestore firestoreDB;
     private RecyclerView recyclerView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
+
+
 
         firestoreDB = FirebaseFirestore.getInstance();
         recyclerView = findViewById(R.id.rv_galleryImages);

@@ -2,6 +2,7 @@ package com.blaxtation.inviteaguest;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,6 +28,7 @@ public class AllTalents extends AppCompatActivity {
     FirebaseFirestore db;
     RecyclerViewAdapter adapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +36,7 @@ public class AllTalents extends AppCompatActivity {
 
 
         db = FirebaseFirestore.getInstance();
-        final RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_guestListafterCategory);
+        final RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_ALl_Talents);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
         final CollectionReference guestlist = db.collection("guest");

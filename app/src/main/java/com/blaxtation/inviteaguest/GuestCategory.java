@@ -13,15 +13,10 @@ import android.widget.ListView;
 public class GuestCategory extends AppCompatActivity {
     ListView listView;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guest_category);
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         listView=findViewById(R.id.category_ListView);
 

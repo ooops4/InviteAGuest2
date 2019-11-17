@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -24,6 +25,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Objects;
 
 public class invite extends AppCompatActivity{
 
@@ -36,12 +38,14 @@ public class invite extends AppCompatActivity{
     private FirebaseAuth firebaseAuth;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_invite);
 
-        Intent intent = getIntent();
+
+        final Intent intent = getIntent();
         final String guestName = getIntent().getStringExtra("name");
 
 
@@ -59,7 +63,7 @@ public class invite extends AppCompatActivity{
         guestExpectations=findViewById(R.id.guestExpectations);
 
         firebaseAuth= FirebaseAuth.getInstance();
-        userId=firebaseAuth.getCurrentUser().getUid();
+        userId= Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
 
         firebaseFirestore=FirebaseFirestore.getInstance();
 
@@ -81,6 +85,8 @@ public class invite extends AppCompatActivity{
                 final String budget = budgetOfHost.getText().toString();
                 final String eventdetails = eventDetails.getText().toString();
                 final String guestexpectations = guestExpectations.getText().toString();
+                final String userid=userId;
+
 
 
                 if (!TextUtils.isEmpty(hostname)
@@ -112,6 +118,7 @@ public class invite extends AppCompatActivity{
                         inviteRequest.put("eventDetails", eventdetails);
                         inviteRequest.put("guestExpectations", guestexpectations);
                         inviteRequest.put("status", "Currently in review");
+                        inviteRequest.put("userid",userid);
 
 
                         firebaseFirestore.collection("InvitationRequest").document().set(inviteRequest).addOnCompleteListener(new OnCompleteListener<Void>() {

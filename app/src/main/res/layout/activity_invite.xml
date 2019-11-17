@@ -6,13 +6,28 @@
     android:layout_height="match_parent"
     android:background="@drawable/backgrnddd"
     tools:context=".invite">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/invite_toolbar"
+        android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        app:title="Invite"
 
-    <androidx.core.widget.NestedScrollView
+        />
+
+
+    <ScrollView
+        android:layout_below="@id/invite_toolbar"
+        android:id="@+id/nested"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
         <LinearLayout
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -389,6 +404,6 @@
 
 
 
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
 
 </RelativeLayout>

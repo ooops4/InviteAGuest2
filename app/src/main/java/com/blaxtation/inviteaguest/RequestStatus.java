@@ -5,6 +5,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,7 +25,7 @@ public class RequestStatus extends AppCompatActivity {
     private RecyclerView mMainList;
     private FirebaseFirestore  mFirestore;
     private FirebaseAuth firebaseAuth;
-    String name;
+    String userID,mobileNumber;
     private List<requestdetailsgetset> requestList;
     private RequestStatusAdapter requestStatusAdapter;
 
@@ -32,6 +33,8 @@ public class RequestStatus extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request_status);
+
+
         requestList=new ArrayList<>();
 
         mMainList=findViewById(R.id.request_list_recycler_view);
@@ -40,13 +43,15 @@ public class RequestStatus extends AppCompatActivity {
         mMainList.setAdapter(requestStatusAdapter);
 
         firebaseAuth= FirebaseAuth.getInstance();
-        name= Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName();
+       userID= Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
+        mobileNumber=firebaseAuth.getCurrentUser().getPhoneNumber();
         mFirestore=FirebaseFirestore.getInstance();
+
 
         //requestStatusAdapter=new RequestStatusAdapter(requestList);
 
         mFirestore.collection("InvitationRequest")
-                .whereEqualTo("hostname",name)
+                .whereEqualTo("userid",userID)
                 .get()
 
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {

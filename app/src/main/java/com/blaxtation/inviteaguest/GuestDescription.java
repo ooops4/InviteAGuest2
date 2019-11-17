@@ -27,10 +27,12 @@ public class GuestDescription extends AppCompatActivity {
     Float ratingf;
     Button EnquireButton;
 
+
     @Override
     protected void onCreate(Bundle savedInstBundle) {
         super.onCreate(savedInstBundle);
         setContentView(R.layout.activity_guest_description);
+
 
         guestnameTextView=(TextView)findViewById(R.id.guest_name_desc);
         guestdescriptionTextView=(TextView)findViewById(R.id.guest_desc_description);

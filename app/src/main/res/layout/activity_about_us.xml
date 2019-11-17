@@ -7,8 +7,20 @@
     tools:context=".about_us"
     android:background="@drawable/backgrnddd">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/aboutus_toolbar"
+        android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        app:title="About Us"
+        />
 
-    <androidx.core.widget.NestedScrollView
+
+    <ScrollView
+        android:layout_below="@id/aboutus_toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -166,5 +178,5 @@
 
         </LinearLayout>
 
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
 </RelativeLayout>

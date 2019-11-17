@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
       //btn_sign_out=(Button)findViewById(R.id.btn_sign_out);
@@ -80,8 +81,10 @@ public class MainActivity extends AppCompatActivity {
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             Toast.makeText(this, "Welcome " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
 
+
             Intent toHomeScreen = new Intent(MainActivity.this,HomeScreenNavDrawer.class);
             startActivity(toHomeScreen);
+            finish();
 
         }
         else
