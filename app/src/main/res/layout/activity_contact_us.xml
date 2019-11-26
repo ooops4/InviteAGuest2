@@ -25,7 +25,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
         <LinearLayout
@@ -43,10 +43,6 @@
                 android:textColor="#51005C"
                 android:textAlignment="center"
                 android:textStyle="bold"/>
-
-
-
-
 
         </LinearLayout>
 
@@ -106,7 +102,7 @@
                     android:id="@+id/contactus_email"
                     android:textColor="#FFF"
                     android:textColorHint="#B8B8B8"
-                    android:inputType="text"
+                    android:inputType="textEmailAddress"
                     android:hint="ex - zbc123@xyz.com"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -135,7 +131,7 @@
                     android:id="@+id/contactus_phonenumb"
                     android:textColor="#FFF"
                     android:textColorHint="#B8B8B8"
-                    android:inputType="text"
+                    android:inputType="phone"
                     android:hint="enter contact number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

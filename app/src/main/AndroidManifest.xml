@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/main_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GuestCategory"></activity>
+        <activity
+            android:name=".Bookings"
+            android:label="@string/title_activity_bookings">
+
+        </activity>
+        <activity android:name=".GuestCategory" />
         <activity android:name=".AllTalents" />
         <activity android:name=".RequestStatus" />
         <activity android:name=".guestListafterCategory" />
@@ -22,20 +27,17 @@
             android:name=".HomeScreenNavDrawer"
             android:label="@string/title_activity_home_screen_nav_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/AppTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".GuestDescription" />
     </application>
-
-
-
 
     <uses-permission android:name="android.permission.INTERNET" />
 
