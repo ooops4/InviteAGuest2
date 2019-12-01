@@ -1,5 +1,6 @@
 package com.blaxtation.inviteaguest.ui.bookings;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,8 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -37,9 +36,10 @@ public class BookingListAdapter extends RecyclerView.Adapter<BookingListAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
 
         holder.hostname.setText(bookingsGETSETList.get(position).getHostname());
+
 
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +50,21 @@ public class BookingListAdapter extends RecyclerView.Adapter<BookingListAdapter.
                 BookingDetails bookingDetails = new BookingDetails();
                 AppCompatActivity activity=(AppCompatActivity) view.getContext();
 
+                Bundle bundle=new Bundle();
+                bookingDetails.setArguments(bundle);
+
+                bundle.putString("hostname",bookingsGETSETList.get(position).getHostname());
+                bundle.putString("invitedBy",bookingsGETSETList.get(position).getHostname());
+                bundle.putString("NnoOfDays",bookingsGETSETList.get(position).getHostname());
+                bundle.putString("audienceType",bookingsGETSETList.get(position).getHostname());
+                bundle.putString("budget",bookingsGETSETList.get(position).getHostname());
+                bundle.putString("dateOfEvent",bookingsGETSETList.get(position).getHostname());
+                bundle.putString("eventDetails",bookingsGETSETList.get(position).getHostname());
+                bundle.putString("guestExpectations",bookingsGETSETList.get(position).getHostname());
+                bundle.putString("hoursOfEngagement",bookingsGETSETList.get(position).getHostname());
+                bundle.putString("venue",bookingsGETSETList.get(position).getHostname());
+                bundle.putString("emailAddress",bookingsGETSETList.get(position).getHostname());
+                bundle.putString("contactNumber",bookingsGETSETList.get(position).getHostname());
 
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_bookings, bookingDetails).addToBackStack(null).commit();
 

@@ -5,11 +5,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -44,6 +46,8 @@ public class BookingsFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        //Objects.requireNonNull(getActivity()).requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //((AppCompatActivity) Objects.requireNonNull(getActivity())).getSupportActionBar().hide();
 
 
 
@@ -91,7 +95,18 @@ public class BookingsFragment extends Fragment {
                             for (DocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
                                Log.d(TAG, document.getId() + " => " + document.getString("hostname"));
                                bookingsGETSET bookingsgetset= new bookingsGETSET
-                                       (document.getString("hostname"));
+                                       (document.getString("hostname"),
+                                               document.getString("NnoOfDays"),
+                                               document.getString("audienceType"),
+                                               document.getString("budget"),
+                                               document.getString("dateOfEvent"),
+                                               document.getString("eventDetails"),
+                                               document.getString("guestExpectations"),
+                                               document.getString("guestName"),
+                                               document.getString("hoursOfEngagement"),
+                                               document.getString("invitedBy"),
+                                               document.getString("status"),
+                                               document.getString("venue"));
                                bookingsList.add(bookingsgetset);
                                 bookingListAdapter=new BookingListAdapter(bookingsList);
                                 mMainList.setAdapter(bookingListAdapter);

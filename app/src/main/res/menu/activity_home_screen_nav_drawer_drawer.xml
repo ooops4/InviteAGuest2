@@ -6,17 +6,17 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_browse_categories"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/categories_icon"
             android:title="Browse Categories" />
 
         <item
             android:id="@+id/nav_browse_all_talents"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/all_talents_icon"
             android:title="Browse All Talents" />
 
         <item
             android:id="@+id/nav_request_status"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/my_bookings_icon"
             android:title="My Bookings" />
 
 
@@ -27,7 +27,7 @@
 
         <item
             android:id="@+id/nav_faq"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/faq_icon"
             android:title="FAQ" />
 
           </group>
@@ -37,12 +37,12 @@
 
             <item
                 android:id="@+id/nav_about_us"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/about_us_icon"
                 android:title="About Us" />
 
             <item
                 android:id="@+id/nav_contact_us"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/contact_us_icon"
                 android:title="Contact Us" />
 
         </menu>

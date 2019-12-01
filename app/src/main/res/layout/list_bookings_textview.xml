@@ -21,4 +21,5 @@
         android:text="HostName"
         android:textColor="#000"
         android:textSize="25dp" />
+
 </RelativeLayout>

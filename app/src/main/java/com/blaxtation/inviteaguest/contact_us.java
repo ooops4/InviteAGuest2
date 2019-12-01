@@ -64,10 +64,10 @@ public class contact_us extends AppCompatActivity {
                         && !TextUtils.isEmpty(message)){
 
                     Map<String,String> getintouchwithus = new HashMap<>();
-                    getintouchwithus.put("guestName",fullname);
-                    getintouchwithus.put("hostname",email);
-                    getintouchwithus.put("invitedBy",contactnumber);
-                    getintouchwithus.put("audienceType",message);
+                    getintouchwithus.put("hostName",fullname);
+                    getintouchwithus.put("hostEmail",email);
+                    getintouchwithus.put("contactNumber",contactnumber);
+                    getintouchwithus.put("message",message);
 
                     firebaseFirestore.collection("GetInTouchWithUsDB").document().set(getintouchwithus).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override

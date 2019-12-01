@@ -27,13 +27,8 @@ public class Bookings extends AppCompatActivity {
                 R.id.navigation_bookings, R.id.navigation_profile, R.id.navigation_contactUs)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-       // NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+      // NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-
-        /*BookingsFragment bookingsFragment= new BookingsFragment();
-        FragmentManager fm=getSupportFragmentManager();
-        fm.beginTransaction().add(R.id.fragment_bookings,bookingsFragment).commit();
-*/
 
 
     }
