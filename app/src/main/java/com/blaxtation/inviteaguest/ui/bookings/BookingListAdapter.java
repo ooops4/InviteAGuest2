@@ -54,17 +54,17 @@ public class BookingListAdapter extends RecyclerView.Adapter<BookingListAdapter.
                 bookingDetails.setArguments(bundle);
 
                 bundle.putString("hostname",bookingsGETSETList.get(position).getHostname());
-                bundle.putString("invitedBy",bookingsGETSETList.get(position).getHostname());
-                bundle.putString("NnoOfDays",bookingsGETSETList.get(position).getHostname());
-                bundle.putString("audienceType",bookingsGETSETList.get(position).getHostname());
-                bundle.putString("budget",bookingsGETSETList.get(position).getHostname());
-                bundle.putString("dateOfEvent",bookingsGETSETList.get(position).getHostname());
-                bundle.putString("eventDetails",bookingsGETSETList.get(position).getHostname());
-                bundle.putString("guestExpectations",bookingsGETSETList.get(position).getHostname());
-                bundle.putString("hoursOfEngagement",bookingsGETSETList.get(position).getHostname());
-                bundle.putString("venue",bookingsGETSETList.get(position).getHostname());
-                bundle.putString("emailAddress",bookingsGETSETList.get(position).getHostname());
-                bundle.putString("contactNumber",bookingsGETSETList.get(position).getHostname());
+                bundle.putString("invitedBy",bookingsGETSETList.get(position).getInvitedBy());
+                bundle.putString("NnoOfDays",bookingsGETSETList.get(position).getNnoOfDays());
+                bundle.putString("audienceType",bookingsGETSETList.get(position).getAudienceType());
+                bundle.putString("budget",bookingsGETSETList.get(position).getBudget());
+                bundle.putString("dateOfEvent",bookingsGETSETList.get(position).getDateOfEvent());
+                bundle.putString("eventDetails",bookingsGETSETList.get(position).getEventDetails());
+                bundle.putString("guestExpectations",bookingsGETSETList.get(position).getGuestExpectations());
+                bundle.putString("hoursOfEngagement",bookingsGETSETList.get(position).getHoursOfEngagement());
+                bundle.putString("venue",bookingsGETSETList.get(position).getVenue());
+                bundle.putString("emailAddress",bookingsGETSETList.get(position).getEmailAddress());
+                bundle.putString("contactNumber",bookingsGETSETList.get(position).getContactNumber());
 
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_bookings, bookingDetails).addToBackStack(null).commit();
 

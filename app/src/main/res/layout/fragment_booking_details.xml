@@ -45,7 +45,6 @@
                     android:textColor="#FFF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Host Name"
                     android:textSize="18dp"
                     android:paddingStart="5dp" />
             </LinearLayout>
@@ -71,7 +70,7 @@
                     android:textColor="#FFF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Host Name"
+
                     android:textSize="18dp"
                     android:paddingStart="5dp"/>
 
@@ -96,7 +95,6 @@
                     android:textColor="#FFF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Host Name"
                     android:textSize="18dp"
                     android:paddingStart="5dp"
                     />
@@ -120,7 +118,6 @@
                     android:textColor="#FFF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Host Name"
                     android:textSize="18dp"
                     android:paddingStart="5dp"
                     />
@@ -145,7 +142,6 @@
                     android:textColor="#FFF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Host Name"
                     android:textSize="18dp"
                     android:paddingStart="5dp"/>
             </LinearLayout>
@@ -169,7 +165,6 @@
                     android:textColor="#FFF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Host Name"
                     android:textSize="18dp"
                     android:paddingStart="5dp"/>
             </LinearLayout>
@@ -194,7 +189,6 @@
                     android:textColor="#FFF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Host Name"
                     android:textSize="18dp"
                     android:paddingStart="5dp"/>
 

@@ -84,8 +84,9 @@ public class BookingDetails extends Fragment {
         String hoursOfEngagement=bundle.getString("hoursOfEngagement");
         String venue=bundle.getString("venue");
         String emailAddress=bundle.getString("emailAddress");
-        String contactNumber=bundle.getString("contactNumber");
+       // String contactNumber=bundle.getString("contactNumber");
 
+        contactNumberTextView.setText(String.valueOf(bundle.getString("contactNumber")));
         //^^^^^showFrag1.setText(String.valueOf(bundle.getString("hello"))); extra method for above as same^^^
         final Map<String, String> statusAccepted = new HashMap<>();
 
@@ -95,7 +96,7 @@ public class BookingDetails extends Fragment {
         hostnameEditText.setText(hostname);
         invitedByTextView.setText(invitedBy);
         emailAddressTextView.setText(emailAddress);
-        contactNumberTextView.setText(contactNumber);
+        //contactNumberTextView.setText(contactNumber);
         audienceTypeTextView.setText(audienceType);
         dateOfEventTextView.setText(dateOfEvent);
         NnoOfDaysTextView.setText(NnoOfDays);
