@@ -19,7 +19,9 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentId;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldPath;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -42,6 +44,8 @@ public class BookingDetails extends Fragment {
     private Button acceptButton,rejectButton;
     private FirebaseFirestore mFirestore;
     private FirebaseAuth firebaseAuth;
+    private String DOCID;
+
 
     private String accept="Accepted";
     private String reject="Rejected";
@@ -69,6 +73,7 @@ public class BookingDetails extends Fragment {
         budgetTextView=root.findViewById(R.id.fragment_budget);
         eventDetailsTextView=root.findViewById(R.id.fragment_eventDetails);
         guestExpectationsTextView=root.findViewById(R.id.fragment_guestExpectations);
+
         acceptButton=root.findViewById(R.id.accept_Button);
         rejectButton=root.findViewById(R.id.reject_Button);
 
@@ -84,9 +89,10 @@ public class BookingDetails extends Fragment {
         String hoursOfEngagement=bundle.getString("hoursOfEngagement");
         String venue=bundle.getString("venue");
         String emailAddress=bundle.getString("emailAddress");
-       // String contactNumber=bundle.getString("contactNumber");
+        String contactNumber=bundle.getString("contactNumber");
+        final String documentID=bundle.getString("docid");
 
-        contactNumberTextView.setText(String.valueOf(bundle.getString("contactNumber")));
+       // contactNumberTextView.setText(String.valueOf(bundle.getString("contactNumber")));
         //^^^^^showFrag1.setText(String.valueOf(bundle.getString("hello"))); extra method for above as same^^^
         final Map<String, String> statusAccepted = new HashMap<>();
 
@@ -96,7 +102,7 @@ public class BookingDetails extends Fragment {
         hostnameEditText.setText(hostname);
         invitedByTextView.setText(invitedBy);
         emailAddressTextView.setText(emailAddress);
-        //contactNumberTextView.setText(contactNumber);
+        contactNumberTextView.setText(contactNumber);
         audienceTypeTextView.setText(audienceType);
         dateOfEventTextView.setText(dateOfEvent);
         NnoOfDaysTextView.setText(NnoOfDays);
@@ -109,11 +115,13 @@ public class BookingDetails extends Fragment {
       statusAccepted.put("status",accept);
       statusRejected.put("status",reject);
 
+        final FieldPath field = FieldPath.of("status");
+
 
         acceptButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mFirestore.collection("InvitationRequest").document().set(statusAccepted).addOnCompleteListener(new OnCompleteListener<Void>() {
+                mFirestore.collection("InvitationRequest").document(documentID).update(field,"Accepted").addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
@@ -137,7 +145,7 @@ public class BookingDetails extends Fragment {
         rejectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mFirestore.collection("InvitationRequest").document().set(statusRejected).addOnCompleteListener(new OnCompleteListener<Void>() {
+                mFirestore.collection("InvitationRequest").document(documentID).update(field,"Rejected").addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {

@@ -46,8 +46,6 @@ public class BookingsFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        //Objects.requireNonNull(getActivity()).requestWindowFeature(Window.FEATURE_NO_TITLE);
-        //((AppCompatActivity) Objects.requireNonNull(getActivity())).getSupportActionBar().hide();
 
 
 
@@ -96,17 +94,19 @@ public class BookingsFragment extends Fragment {
                                Log.d(TAG, document.getId() + " => " + document.getString("hostname"));
                                bookingsGETSET bookingsgetset= new bookingsGETSET
                                        (document.getString("hostname"),
-                                               document.getString("NnoOfDays"),
+                                               document.getString("invitedBy"),
+                                               document.getString("emailAddress"),
+                                               document.getString("contactNumber"),
                                                document.getString("audienceType"),
-                                               document.getString("budget"),
                                                document.getString("dateOfEvent"),
+                                               document.getString("numbOfDays"),
+                                               document.getString("hoursOfEngagement"),
+                                               document.getString("venue"),
+                                               document.getString("budget"),
                                                document.getString("eventDetails"),
                                                document.getString("guestExpectations"),
-                                               document.getString("guestName"),
-                                               document.getString("hoursOfEngagement"),
-                                               document.getString("invitedBy"),
-                                               document.getString("status"),
-                                               document.getString("venue"));
+                                               document.getId());
+
                                bookingsList.add(bookingsgetset);
                                 bookingListAdapter=new BookingListAdapter(bookingsList);
                                 mMainList.setAdapter(bookingListAdapter);

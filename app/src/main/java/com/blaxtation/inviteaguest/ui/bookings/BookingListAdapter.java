@@ -38,7 +38,7 @@ public class BookingListAdapter extends RecyclerView.Adapter<BookingListAdapter.
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
 
-        holder.hostname.setText(bookingsGETSETList.get(position).getHostname());
+        holder.hostname.setText(bookingsGETSETList.get(position).getHostnamee());
 
 
 
@@ -53,18 +53,19 @@ public class BookingListAdapter extends RecyclerView.Adapter<BookingListAdapter.
                 Bundle bundle=new Bundle();
                 bookingDetails.setArguments(bundle);
 
-                bundle.putString("hostname",bookingsGETSETList.get(position).getHostname());
-                bundle.putString("invitedBy",bookingsGETSETList.get(position).getInvitedBy());
-                bundle.putString("NnoOfDays",bookingsGETSETList.get(position).getNnoOfDays());
-                bundle.putString("audienceType",bookingsGETSETList.get(position).getAudienceType());
-                bundle.putString("budget",bookingsGETSETList.get(position).getBudget());
-                bundle.putString("dateOfEvent",bookingsGETSETList.get(position).getDateOfEvent());
-                bundle.putString("eventDetails",bookingsGETSETList.get(position).getEventDetails());
-                bundle.putString("guestExpectations",bookingsGETSETList.get(position).getGuestExpectations());
-                bundle.putString("hoursOfEngagement",bookingsGETSETList.get(position).getHoursOfEngagement());
-                bundle.putString("venue",bookingsGETSETList.get(position).getVenue());
-                bundle.putString("emailAddress",bookingsGETSETList.get(position).getEmailAddress());
-                bundle.putString("contactNumber",bookingsGETSETList.get(position).getContactNumber());
+                bundle.putString("hostname",bookingsGETSETList.get(position).getHostnamee());
+                bundle.putString("invitedBy",bookingsGETSETList.get(position).getInvitedby());
+                bundle.putString("NnoOfDays",bookingsGETSETList.get(position).getNumbofdays());
+                bundle.putString("audienceType",bookingsGETSETList.get(position).getAudiencetype());
+                bundle.putString("budget",bookingsGETSETList.get(position).getBudgettotal());
+                bundle.putString("dateOfEvent",bookingsGETSETList.get(position).getDateofevent());
+                bundle.putString("eventDetails",bookingsGETSETList.get(position).getEventdetails());
+                bundle.putString("guestExpectations",bookingsGETSETList.get(position).getGuestexpectations());
+                bundle.putString("hoursOfEngagement",bookingsGETSETList.get(position).getHoursofengagement());
+                bundle.putString("venue",bookingsGETSETList.get(position).getVenuelocation());
+                bundle.putString("emailAddress",bookingsGETSETList.get(position).getEmailaddress());
+                bundle.putString("contactNumber",bookingsGETSETList.get(position).getContactnumber());
+                bundle.putString("docid",bookingsGETSETList.get(position).getDocid());
 
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_bookings, bookingDetails).addToBackStack(null).commit();
 

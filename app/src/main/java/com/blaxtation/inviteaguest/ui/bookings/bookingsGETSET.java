@@ -1,131 +1,144 @@
 package com.blaxtation.inviteaguest.ui.bookings;
 
 public class bookingsGETSET {
-    String hostname;
-    String invitedBy;
-    String NnoOfDays;
-    String audienceType;
-    String budget;
-    String dateOfEvent;
-    String eventDetails;
-    String guestExpectations;
-    String hoursOfEngagement;
-    String venue;
-    String emailAddress;
-    String contactNumber;
-
-    public bookingsGETSET(String hostname, String invitedBy, String nnoOfDays, String audienceType, String budget, String dateOfEvent, String eventDetails, String guestExpectations, String hoursOfEngagement, String venue, String emailAddress, String contactNumber) {
-        this.hostname = hostname;
-        this.invitedBy = invitedBy;
-        NnoOfDays = nnoOfDays;
-        this.audienceType = audienceType;
-        this.budget = budget;
-        this.dateOfEvent = dateOfEvent;
-        this.eventDetails = eventDetails;
-        this.guestExpectations = guestExpectations;
-        this.hoursOfEngagement = hoursOfEngagement;
-        this.venue = venue;
-        this.emailAddress = emailAddress;
-        this.contactNumber = contactNumber;
+    public String getHostnamee() {
+        return hostnamee;
     }
 
-    public String getHostname() {
-        return hostname;
+    public void setHostnamee(String hostnamee) {
+        this.hostnamee = hostnamee;
     }
 
-    public void setHostname(String hostname) {
-        this.hostname = hostname;
+    public String getInvitedby() {
+        return invitedby;
     }
 
-    public String getInvitedBy() {
-        return invitedBy;
+    public void setInvitedby(String invitedby) {
+        this.invitedby = invitedby;
     }
 
-    public void setInvitedBy(String invitedBy) {
-        this.invitedBy = invitedBy;
+    public String getEmailaddress() {
+        return emailaddress;
     }
 
-    public String getNnoOfDays() {
-        return NnoOfDays;
+    public void setEmailaddress(String emailaddress) {
+        this.emailaddress = emailaddress;
     }
 
-    public void setNnoOfDays(String nnoOfDays) {
-        NnoOfDays = nnoOfDays;
+    public String getContactnumber() {
+        return contactnumber;
     }
 
-    public String getAudienceType() {
-        return audienceType;
+    public void setContactnumber(String contactnumber) {
+        this.contactnumber = contactnumber;
     }
 
-    public void setAudienceType(String audienceType) {
-        this.audienceType = audienceType;
+    public String getAudiencetype() {
+        return audiencetype;
     }
 
-    public String getBudget() {
-        return budget;
+    public void setAudiencetype(String audiencetype) {
+        this.audiencetype = audiencetype;
     }
 
-    public void setBudget(String budget) {
-        this.budget = budget;
+    public String getDateofevent() {
+        return dateofevent;
     }
 
-    public String getDateOfEvent() {
-        return dateOfEvent;
+    public void setDateofevent(String dateofevent) {
+        this.dateofevent = dateofevent;
     }
 
-    public void setDateOfEvent(String dateOfEvent) {
-        this.dateOfEvent = dateOfEvent;
+    public String getNumbofdays() {
+        return numbofdays;
     }
 
-    public String getEventDetails() {
-        return eventDetails;
+    public void setNumbofdays(String numbofdays) {
+        this.numbofdays = numbofdays;
     }
 
-    public void setEventDetails(String eventDetails) {
-        this.eventDetails = eventDetails;
+    public String getHoursofengagement() {
+        return hoursofengagement;
     }
 
-    public String getGuestExpectations() {
-        return guestExpectations;
+    public void setHoursofengagement(String hoursofengagement) {
+        this.hoursofengagement = hoursofengagement;
     }
 
-    public void setGuestExpectations(String guestExpectations) {
-        this.guestExpectations = guestExpectations;
+    public String getVenuelocation() {
+        return venuelocation;
     }
 
-    public String getHoursOfEngagement() {
-        return hoursOfEngagement;
+    public void setVenuelocation(String venuelocation) {
+        this.venuelocation = venuelocation;
     }
 
-    public void setHoursOfEngagement(String hoursOfEngagement) {
-        this.hoursOfEngagement = hoursOfEngagement;
+    public String getBudgettotal() {
+        return budgettotal;
     }
 
-    public String getVenue() {
-        return venue;
+    public void setBudgettotal(String budgettotal) {
+        this.budgettotal = budgettotal;
     }
 
-    public void setVenue(String venue) {
-        this.venue = venue;
+    public String getEventdetails() {
+        return eventdetails;
     }
 
-    public String getEmailAddress() {
-        return emailAddress;
+    public void setEventdetails(String eventdetails) {
+        this.eventdetails = eventdetails;
     }
 
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
+    public String getGuestexpectations() {
+        return guestexpectations;
     }
 
-    public String getContactNumber() {
-        return contactNumber;
-    }
-
-    public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
+    public void setGuestexpectations(String guestexpectations) {
+        this.guestexpectations = guestexpectations;
     }
 
 
+    public String getDocid() {
+        return docid;
+    }
+
+    public void setDocid(String docid){
+
+        this.docid=docid;
+    }
 
 
+    public bookingsGETSET() {
+    }
+
+    String hostnamee;
+    String invitedby;
+    String emailaddress;
+    String contactnumber;
+    String audiencetype;
+    String dateofevent;
+    String numbofdays;
+    String hoursofengagement;
+    String venuelocation;
+    String budgettotal;
+    String eventdetails;
+    String guestexpectations;
+    String docid;
+
+
+    public bookingsGETSET(String hostnamee, String invitedby, String emailaddress, String contactnumber, String audiencetype, String dateofevent, String numbofdays, String hoursofengagement, String venuelocation, String budgettotal, String eventdetails, String guestexpectations, String docid) {
+        this.hostnamee = hostnamee;
+        this.invitedby = invitedby;
+        this.emailaddress = emailaddress;
+        this.contactnumber = contactnumber;
+        this.audiencetype = audiencetype;
+        this.dateofevent = dateofevent;
+        this.numbofdays = numbofdays;
+        this.hoursofengagement = hoursofengagement;
+        this.venuelocation = venuelocation;
+        this.budgettotal = budgettotal;
+        this.eventdetails = eventdetails;
+        this.guestexpectations = guestexpectations;
+        this.docid = docid;
+    }
 }

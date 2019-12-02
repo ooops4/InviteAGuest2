@@ -31,7 +31,9 @@ public class invite extends AppCompatActivity{
 
 
     Button InviteButton;
-    EditText hostName,invitedBy,audienceType,dateOfEvent,noOfDays,hoursOfEng,venueOfPlace,budgetOfHost,eventDetails,guestExpectations;
+    EditText hostName,invitedBy,audienceType,dateOfEvent,noOfDays,hoursOfEng,
+            venueOfPlace,budgetOfHost,eventDetails,guestExpectations,hostEmailAddress,hostContactNumber;
+
 
     String userId;
     private FirebaseFirestore firebaseFirestore;
@@ -52,6 +54,8 @@ public class invite extends AppCompatActivity{
         InviteButton=(Button)findViewById(R.id.inviteButton);
         hostName=findViewById(R.id.host_name);
         invitedBy=findViewById(R.id.invitedBy);
+        hostContactNumber=findViewById(R.id.hostContactNumber);
+        hostEmailAddress=findViewById(R.id.hostEmailAddress);
 
         audienceType=findViewById(R.id.audienceType);
         dateOfEvent=findViewById(R.id.eventDate);
@@ -85,13 +89,16 @@ public class invite extends AppCompatActivity{
                 final String budget = budgetOfHost.getText().toString();
                 final String eventdetails = eventDetails.getText().toString();
                 final String guestexpectations = guestExpectations.getText().toString();
+                final String hostemailaddress = hostEmailAddress.getText().toString();
+                final String hostcontactnumber = hostContactNumber.getText().toString();
+
+
                 final String userid=userId;
 
 
 
                 if (!TextUtils.isEmpty(hostname)
                         && !TextUtils.isEmpty(invitedby)
-
                         && !TextUtils.isEmpty(audiencetype)
                         && !TextUtils.isEmpty(dateofevent)
                         && !TextUtils.isEmpty(noofdays)
@@ -99,6 +106,8 @@ public class invite extends AppCompatActivity{
                         && !TextUtils.isEmpty(venue)
                         && !TextUtils.isEmpty(budget)
                         && !TextUtils.isEmpty(eventdetails)
+                        && !TextUtils.isEmpty(hostcontactnumber)
+                        && !TextUtils.isEmpty(hostemailaddress)
                         && !TextUtils.isEmpty(guestexpectations)) {
 
 
@@ -109,9 +118,11 @@ public class invite extends AppCompatActivity{
                         inviteRequest.put("guestName", name);
                         inviteRequest.put("hostname", hostname);
                         inviteRequest.put("invitedBy", invitedby);
+                        inviteRequest.put("emailAddress", hostemailaddress);
+                        inviteRequest.put("contactNumber", hostcontactnumber);
                         inviteRequest.put("audienceType", audiencetype);
                         inviteRequest.put("dateOfEvent", dateofevent);
-                        inviteRequest.put("NnoOfDays", noofdays);
+                        inviteRequest.put("numbOfDays", noofdays);
                         inviteRequest.put("hoursOfEngagement", hoursofeng);
                         inviteRequest.put("venue", venue);
                         inviteRequest.put("budget", budget);
