@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity"
     android:background="@drawable/backgrnddd">
 
@@ -49,7 +50,7 @@
 
 
         <LinearLayout
-
+            android:paddingTop="10dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -61,12 +62,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Login as a Host"
+                    android:textColor="#FFF"
                     />
 
             <com.google.android.gms.common.SignInButton
-                android:id="@+id/host_sign_in"
+                app:buttonSize="standard"
 
-                android:paddingLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:id="@+id/host_sign_in"
+                android:layout_marginEnd="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
@@ -88,10 +92,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Login as a Guest"
+                android:textColor="#FFF"
                 />
 
             <com.google.android.gms.common.SignInButton
 
+
+                android:layout_marginEnd="10dp"
                 android:id="@+id/guest_sign_in"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -1,14 +1,14 @@
 package com.blaxtation.inviteaguest;
 
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -17,7 +17,6 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -56,24 +55,27 @@ public class MainActivity extends AppCompatActivity {
 
         googleSignInClient= GoogleSignIn.getClient(this,hostSignIn);
 
-        HostSignIn=(SignInButton)findViewById(R.id.host_sign_in);
+        HostSignIn=findViewById(R.id.host_sign_in);
         HostSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent signinIntent=googleSignInClient.getSignInIntent();
 
-                startActivityForResult(signinIntent,MY_REQUEST_CODE_FOR_HOST);
+                    Intent signinIntent=googleSignInClient.getSignInIntent();
+                    startActivityForResult(signinIntent,MY_REQUEST_CODE_FOR_HOST);
 
             }
         });
 
 
-        GuestSignIn=(SignInButton)findViewById(R.id.guest_sign_in);
+        GuestSignIn=findViewById(R.id.guest_sign_in);
         GuestSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent signinIntent=googleSignInClient.getSignInIntent();
-                startActivityForResult(signinIntent,MY_REQUEST_CODE_FOR_GUEST);
+
+
+                        Intent signinIntent = googleSignInClient.getSignInIntent();
+                        startActivityForResult(signinIntent, MY_REQUEST_CODE_FOR_GUEST);
+
 
             }
         });
@@ -95,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
+                Toast.makeText(this, "Internet Connection Required", Toast.LENGTH_SHORT).show();
                 // ...
             }
         }
@@ -107,6 +110,8 @@ public class MainActivity extends AppCompatActivity {
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
+                Toast.makeText(this, "Internet Connection Required", Toast.LENGTH_SHORT).show();
+
                 // ...
             }
         }
