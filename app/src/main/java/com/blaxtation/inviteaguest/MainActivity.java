@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
 
                             FirebaseUser user = auth.getCurrentUser();
-                            Intent i = new Intent(getApplicationContext(),HomeScreenNavDrawer.class);
+                            Intent i = new Intent(MainActivity.this,HomeScreenNavDrawer.class);
                             startActivity(i);
                             finish();
 
