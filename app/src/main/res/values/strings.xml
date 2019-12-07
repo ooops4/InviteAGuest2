@@ -44,7 +44,7 @@
     <string name="title_activity_bookings">Bookings</string>
     <string name="bookings">Bookings</string>
     <string name="profile">Profile</string>
-    <string name="contactUs">ContactUs</string>
+    <string name="contactUs">Contact Us</string>
     <string-array name="categories">
         <item>Actors</item>
         <item>Singers</item>
