@@ -82,7 +82,7 @@ public class BookingDetails extends Fragment {
         String invitedBy=bundle.getString("invitedBy");
         String NnoOfDays=bundle.getString("NnoOfDays");
         String audienceType=bundle.getString("audienceType");
-        String budget=bundle.getString("budget");
+        String budget=bundle.getString("budget")+" Thousand";
         String dateOfEvent=bundle.getString("dateOfEvent");
         String eventDetails=bundle.getString("eventDetails");
         String guestExpectations=bundle.getString("guestExpectations");

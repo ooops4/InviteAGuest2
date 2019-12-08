@@ -39,7 +39,7 @@ public class AllTalents extends AppCompatActivity {
         final RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_ALl_Talents);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
-        final CollectionReference guestlist = db.collection("guest");
+       // final CollectionReference guestlist = db.collection("guest");
 
         db.collection("guest")
                 //.whereEqualTo("name", true)
